@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/nav_view_patient"
+        android:icon="@drawable/ic_patient"
+        android:title="پرونده بیماران"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nav_view_qr"
+        android:icon="@drawable/ic_qr"
+        android:title="رمزینه ها"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nav_view_nfc"
+        android:icon="@drawable/ic_nfc"
+        android:title="کارت هوشمند"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nav_view_handwrite"
+        android:icon="@drawable/ic_handwrite"
+        android:title="مبدل دستخط"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nav_view_draw"
+        android:icon="@drawable/ic_page"
+        android:title="نسخه هویسی"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nav_view_rec"
+        android:icon="@drawable/ic_record"
+        android:title="صدای درمان"
+        app:showAsAction="ifRoom" />
+
+</menu>

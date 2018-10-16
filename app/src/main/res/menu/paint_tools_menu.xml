@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/paint_edit"
+        android:icon="@drawable/ic_edit"
+        android:title="edit"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/paint_clean"
+        android:icon="@drawable/ic_clean"
+        android:title="clean"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/paint_erase"
+        android:icon="@drawable/ic_erase"
+        android:title="erase"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/paint_undo"
+        android:icon="@drawable/ic_undo"
+        android:title="undo"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/paint_redo"
+        android:icon="@drawable/ic_redo"
+        android:title="redo"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/paint_text"
+        android:icon="@drawable/ic_text"
+        android:title="text"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/paint_textSize"
+        android:icon="@drawable/ic_text_size"
+        android:title="text size"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/paint_color"
+        android:icon="@drawable/ic_color"
+        android:title="color"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/paint_insert"
+        android:icon="@drawable/ic_insert"
+        android:title="insert"
+        app:showAsAction="ifRoom" />
+
+</menu>

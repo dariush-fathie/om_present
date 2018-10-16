@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0079fe</color>
+    <color name="colorPrimaryDark">#eff1f3</color>
+    <color name="colorAccent">#fd9401</color>
+
+    <!-- ios color -->
+    <color name="red">#fd3b31</color>
+    <color name="orange">#fd9401</color>
+    <color name="green">#4bd764</color>
+    <color name="tealBlue">#59c6f9</color>
+    <color name="blue">#0079fe</color>
+    <color name="purple">#5755d5</color>
+    <color name="pink">#fd2d55</color>
+    <color name="yellow">#fdca01</color>
+
+    <!--om color-->
+    <color name="staticTextColor">#9e9ea4</color>
+    <color name="dynamicAndTitleTextColor">#3c4758</color>
+
+    <color name="lineColor">#dee4ec</color>
+    <color name="seperatorLineColor">#ebebec</color>
+
+    <color name="activeColor">#205755d5</color>
+
+
+    <color name="bg">#ededf3</color>
+    <color name="darkBG">#e0e0e6</color>
+    <color name="whiteBG">#fdfdfe</color>
+    <color name="iosToolbar">#f4f4f6</color>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="iconColor">#eeeef4</color>
+
+
+    <!--new colors-->
+    <color name="silver">#dbe4ed</color>
+    <color name="graySms">#eff1f3</color>
+    <color name="smsBg">#fdfdfe</color>
+
+    <color name="gray1">#fbfcfc</color>
+    <color name="gray2">#f8f9f9</color>
+    <color name="gray3">#f4f6f6</color>
+    <color name="gray4">#f2f4f4</color>
+    <color name="gray5">#ebedef</color>
+    <color name="gray6">#eaecee</color>
+    <color name="gray7">#fbfcfc</color>
+    <color name="gray8">#f2f3f4</color>
+    <color name="gray9">#eaeded</color>
+    <color name="gray10">#e5e8e8</color>
+    <color name="gray11">#d6dbdf</color>
+    <color name="gray12">#d5d8dc</color>
+    <color name="gray13">#f7f9f9</color>
+    <color name="gray14">#e5e7e9</color>
+    <color name="gray15">#d5dbdb</color>
+    <color name="gray16">#ccd1d1</color>
+    <color name="gray17">#aeb6bf</color>
+    <color name="gray18">#f4f6f7</color>
+    <color name="gray19">#d7dbdd</color>
+    <color name="gray20">#bfc9ca</color>
+    <color name="gray21">#b2babb</color>
+    <color name="gray22">#f0f3f4</color>
+    <color name="gray23">#cacfd2</color>
+    <color name="gray24">#aab7b8</color>
+    <color name="gray25">#99a3a4</color>
+    <color name="gray26">#ecf0f1</color>
+    <color name="gray27">#bdc3c7</color>
+    <color name="gray28">#95a5a6</color>
+    <color name="gray29">#d0d3d4</color>
+    <color name="gray30">#a6acaf</color>
+    <color name="gray31">#b3b6b7</color>
+    <color name="gray32">#979a9a</color>
+    <color name="gray33">#909497</color>
+    <color name="gray34">#DCDCDC</color>
+    <color name="gray35">#D3D3D3</color>
+    <color name="gray36">#C0C0C0</color>
+    <color name="gray37">#A9A9A9</color>
+    <color name="gray38">#808080</color>
+    <color name="gray39">#696969</color>
+    <color name="gray40">#778899</color>
+    <color name="gray41">#708090</color>
+    <color name="gray42">#696969</color>
+    <color name="gray43">#BCC6CC</color>
+    <color name="gray44">#EEEEEE</color>
+    <color name="gray45">#E3E3E3</color>
+    <color name="gray46">#Ececec</color>
+    <color name="gray47">#DBDBDB</color>
+    <color name="gray48">#DEDCD4</color>
+    <color name="gray49">#C3B7BD</color>
+    <color name="gray50">#707070</color>
+    <color name="gray51">#F1F2F3</color>
+    <color name="gray52">#B1B1CB</color>
+    <color name="gray53">#C6CAD7</color>
+    <color name="gray54">#D1D0D7</color>
+    <color name="gray55">#E3E1E3</color>
+    <color name="gray56">#F2F2EE</color>
+    <color name="gray57">#DBD9E4</color>
+    <color name="gray58">#D1D9DD</color>
+    <color name="gray58Transparent">#aad1d9dd</color>
+    <color name="gray59">#DCDDDF</color>
+    <color name="gray60">#F0F0FF</color>
+    <color name="gray61">#C8D3D9</color>
+    <color name="gray62">#C0C0CB</color>
+    <color name="gray63">#BDBCBD</color>
+    <color name="gray64">#F5F6F7</color>
+    <color name="gray65">#E7EAED</color>
+    <color name="gray66">#F1F3F4</color>
+    <color name="gray67">#E1E1E1</color>
+    <color name="gray68">#f8f8f9</color>
+    <color name="gray69">#E1E1E1</color>
+    <color name="gray70">#f4f4f5</color>
+
+</resources>
+

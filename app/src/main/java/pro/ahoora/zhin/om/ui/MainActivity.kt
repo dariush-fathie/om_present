@@ -1,11 +1,10 @@
 package pro.ahoora.zhin.om.ui
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewTreeObserver
+import android.view.*
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +23,11 @@ import pro.ahoora.zhin.om.util.Converter
 import pro.ahoora.zhin.om.viewModels.MainViewModel
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
+import pro.ahoora.zhin.om.ui.nfc.NfcActivity
+import pro.ahoora.zhin.om.ui.qr.QrActivity
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.AppCompatEditText
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener, ViewTreeObserver.OnGlobalLayoutListener {
@@ -51,8 +55,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         initVMs()
 
         toolbar.title = "پرونده بیماران"
-        val tv = toolbar.getChildAt(0) as TextView
-        //tv.typeface = ResourcesCompat.getFont(this , R.font.ir_sans)
 
         width = Converter.getScreenWidthPx(this) - 300
         setSupportActionBar(toolbar)
@@ -95,11 +97,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             stopShimmer()
             setAdapter(it)
         })
-
         patientViewModel.patientProgressVisibility.observe(this, Observer {
             pb_1.visibility = it
         })
-
     }
 
     private fun getDataFromLocalDB() {
@@ -126,6 +126,41 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         rv_search.addItemDecoration(VerticalLinearLayoutMangerDecoration(this, 16, 8, 16, 8))
     }
 
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu , menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+
+        val id = item?.itemId
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.changeIp) {
+            showIpDialog()
+            return true
+        }
+
+        if (id == android.R.id.toggle) {
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun showIpDialog() {
+        val alert = AlertDialog.Builder(this)
+        alert.setMessage("لطفا ip سرور را وارد کنید :")
+        val view = LayoutInflater.from(this).inflate(R.layout.ip_edit_text , null)
+        val et:AppCompatEditText = view.findViewById(R.id.et_ip)
+        alert.setView(view)
+        alert.setPositiveButton("اعمال"){dialog, which ->
+            patientViewModel.ip = et.text.toString()
+            dialog.dismiss()
+        }.setNegativeButton("برگشت") {dialog, which ->
+            dialog.dismiss()
+        }.show()
+    }
 
     override fun onGlobalLayout() {
         width = drawerLayout.measuredWidth
@@ -156,9 +191,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.nav_view_nfc -> {
                 // start nfc activity
+                startActivity( Intent(this@MainActivity, NfcActivity::class.java))
             }
             R.id.nav_view_qr -> {
                 // start qr activity
+                startActivity( Intent(this@MainActivity, QrActivity::class.java))
             }
 
             R.id.nav_view_rec ->{
@@ -173,7 +210,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.closeDrawers()
         return true
     }
-
 
 
 }

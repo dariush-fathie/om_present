@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import pro.ahoora.zhin.om.R
 import pro.ahoora.zhin.om.model.Patient
-import pro.ahoora.zhin.om.ui.PatientDetailActivity
+import pro.ahoora.zhin.om.ui.detail.PatientDetailActivity
 import java.util.*
 
 class SearchAdapter(private val dataSet: List<Patient>, private val context: Context) : RecyclerView.Adapter<SearchAdapter.ItemHolder>() {

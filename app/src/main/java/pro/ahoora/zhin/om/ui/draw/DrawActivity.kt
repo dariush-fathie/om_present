@@ -1,13 +1,13 @@
-package pro.ahoora.zhin.om.ui
+package pro.ahoora.zhin.om.ui.draw
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import pro.ahoora.zhin.om.R
 
-class PatientDetailActivity : AppCompatActivity() {
+class DrawActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_patient_detail)
+        setContentView(R.layout.activity_draw)
     }
 }

@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#eff1f3</color>
     <color name="colorAccent">#fd9401</color>
 
+
+
     <!-- ios color -->
     <color name="red">#fd3b31</color>
     <color name="orange">#fd9401</color>
@@ -109,6 +111,14 @@
     <color name="gray68">#f8f8f9</color>
     <color name="gray69">#E1E1E1</color>
     <color name="gray70">#f4f4f5</color>
+
+
+    <color name="white">#ffffff</color>
+    <color name="light">#8fe19a0c</color>
+    <color name="colorB">#02aeef</color>
+    <color name="title">#424b55</color>
+    <color name="back">#efefef</color>
+    <color name="mic">#a5a5a5</color>
 
 </resources>
 

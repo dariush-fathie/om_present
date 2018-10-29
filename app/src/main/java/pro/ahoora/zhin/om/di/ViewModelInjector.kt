@@ -13,7 +13,6 @@ interface ViewModelInjector {
 
     @Component.Builder
     interface Builder {
-
         fun build(): ViewModelInjector
         fun retrofitModule(retrofitModule: RetrofitModule):Builder
 

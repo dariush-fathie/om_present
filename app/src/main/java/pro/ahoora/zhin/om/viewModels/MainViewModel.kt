@@ -9,12 +9,19 @@ import io.reactivex.schedulers.Schedulers
 import pro.ahoora.zhin.om.base.BaseViewModel
 import pro.ahoora.zhin.om.model.Patient
 import pro.ahoora.zhin.om.repositories.local.RESTApi
+import pro.ahoora.zhin.om.util.Constants
 import javax.inject.Inject
 
 class MainViewModel : BaseViewModel() {
 
     @Inject
     lateinit var api: RESTApi
+
+    var ip: String = "192.168.1.241"
+
+    private fun getHostUrl(): String {
+        return ("http://" + ip + ":" + Constants.defaultHttpPort + "/om/getAllLocalPatients").also { Log.e("Host", it) }
+    }
 
     private lateinit var subscription: Disposable
 
@@ -24,7 +31,6 @@ class MainViewModel : BaseViewModel() {
     var patinet: MutableLiveData<List<Patient>> = MutableLiveData()
     var patientProgressVisibility: MutableLiveData<Int> = MutableLiveData()
 
-
     init {
         patientProgressVisibility.value = View.INVISIBLE
     }
@@ -32,7 +38,7 @@ class MainViewModel : BaseViewModel() {
     private lateinit var patientDisposable: Disposable
     fun getPatient(id: Int) {
         patientProgressVisibility.value = View.VISIBLE
-        patientDisposable = api.getAllLocalPatient()
+        patientDisposable = api.getAllLocalPatient(getHostUrl())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({ item: List<Patient>? ->

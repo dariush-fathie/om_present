@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="سید جلال حسینی "
+                    android:textColor="@color/gray5"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/ir_sans" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_sh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="شماره ملی : 38312345678"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/ir_sans" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_sickness"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="بیماری : دیابت نوع A"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/ir_sans" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:lineSpacingExtra="3dp"
+            android:paddingEnd="8dp"
+            android:text="مشاهدات اولیه :"
+            android:textColor="@color/dynamicAndTitleTextColor"
+            android:textSize="16sp" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:flexWrap="wrap"
+            app:justifyContent="center">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="سرگیجه"
+                android:textColor="@color/red"
+                app:icon="@drawable/ic_headache"
+                app:iconSize="24dp"
+                app:iconTint="@color/red"
+                app:strokeColor="@color/red" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="سوزش معده"
+                android:textColor="@color/red"
+                app:icon="@drawable/icons_stomach"
+                app:iconSize="24dp"
+                app:iconTint="@color/red"
+                app:strokeColor="@color/red" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="اسهال خفیف"
+                android:textColor="@color/yellow"
+                app:icon="@drawable/ic_colon"
+                app:iconSize="24dp"
+                app:iconTint="@color/yellow"
+                app:strokeColor="@color/yellow" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="بی حالی"
+                android:textColor="@color/yellow"
+                app:icon="@drawable/ic_bored"
+                app:iconSize="24dp"
+                app:iconTint="@color/yellow"
+                app:strokeColor="@color/yellow" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="خواب آلوده"
+                android:textColor="@color/dynamicAndTitleTextColor"
+                app:icon="@drawable/ic_sleep"
+                app:iconSize="24dp"
+                app:iconTint="@color/dynamicAndTitleTextColor"
+                app:strokeColor="@color/dynamicAndTitleTextColor" />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:lineSpacingExtra="3dp"
+            android:paddingEnd="8dp"
+            android:text="یادداشت :"
+            android:textColor="@color/dynamicAndTitleTextColor"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:lineSpacingExtra="3dp"
+            android:paddingEnd="16dp"
+            android:text="@string/lorem_3_sen"
+            android:textColor="@color/staticTextColor"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

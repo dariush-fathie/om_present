@@ -4,6 +4,7 @@ import io.reactivex.Observable
 import pro.ahoora.zhin.om.model.Patient
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Url
 
 interface RESTApi {
 
@@ -16,5 +17,7 @@ interface RESTApi {
     @GET("getAllLocalPatients")
     fun getAllLocalPatient(): Observable<List<Patient>>
 
+    @GET
+    fun getAllLocalPatient(@Url url: String): Observable<List<Patient>>
 
 }

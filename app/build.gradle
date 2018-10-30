@@ -94,4 +94,9 @@ dependencies {
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation 'me.dm7.barcodescanner:zxing:1.9.8'
 
+    implementation 'me.priyesh:chroma:1.0.2'
+    implementation 'com.github.adrielcafe:AndroidAudioRecorder:0.3.0'
+
+    implementation 'ru.superjob:kotlin-permissions:1.0.2'
+
 }

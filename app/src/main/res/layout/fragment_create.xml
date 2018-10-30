@@ -1,74 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/activity_vertical_margin">
+    android:padding="16dp">
 
     <androidx.appcompat.widget.AppCompatEditText
-        style="@style/Base.Widget.AppCompat.TextView.SpinnerItem"
         android:id="@+id/edt_value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:hint="متن ورودی"
+        android:background="@drawable/round_edit_box"
+        android:hint="ورودی"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="40dp"
+        android:paddingEnd="16dp"
+        android:textSize="14sp"
+        app:fontFamily="@font/ir_sans"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iv_mic"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_mic"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="8dp"
         android:src="@drawable/ic_mic"
         app:layout_constraintBottom_toBottomOf="@+id/edt_value"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/edt_value" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/save"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/edt_value">
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/save"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="ذخیره" />
-        <Button
-            android:id="@+id/start"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="ایجاد" />
+        android:layout_weight="1"
+        android:text="ذخیره"
+        android:textColor="@color/dynamicAndTitleTextColor"
+        app:fontFamily="@font/ir_sans"
+        app:icon="@drawable/ic_save"
+        app:layout_constraintEnd_toStartOf="@+id/start"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_value" />
 
-
-    </LinearLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/start"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="ایجاد"
+        android:textColor="@color/dynamicAndTitleTextColor"
+        app:fontFamily="@font/ir_sans"
+        app:icon="@drawable/ic_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/save"
+        app:layout_constraintTop_toBottomOf="@+id/edt_value" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/QR_Image"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:scaleType="center"
-        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_qr_big"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/save"
+        app:layout_constraintVertical_bias="0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,6 @@
 
     </me.dm7.barcodescanner.zxing.ZXingScannerView>
 
-
     <RelativeLayout
         android:id="@+id/rl_light"
         android:layout_width="80dp"
@@ -40,7 +39,7 @@
             app:fontFamily="@font/ir_sans"
             android:text="روشن"
             android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
     </RelativeLayout>
 
 

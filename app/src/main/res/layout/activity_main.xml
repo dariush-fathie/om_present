@@ -125,6 +125,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.appcompat.widget.Toolbar
+                    app:logo="@drawable/jin_logo_24"
                     app:fontFamily="@font/ir_sans"
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"

@@ -2,32 +2,37 @@ package pro.ahoora.zhin.om.ui
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
-import android.os.Handler
+import android.os.Environment
+import android.util.Log
 import android.view.*
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import cafe.adriel.androidaudiorecorder.AndroidAudioRecorder
+import cafe.adriel.androidaudiorecorder.model.AudioChannel
+import cafe.adriel.androidaudiorecorder.model.AudioSampleRate
+import cafe.adriel.androidaudiorecorder.model.AudioSource
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pro.ahoora.zhin.om.R
 import pro.ahoora.zhin.om.adapters.SearchAdapter
 import pro.ahoora.zhin.om.model.Patient
 import pro.ahoora.zhin.om.ui.decoration.VerticalLinearLayoutMangerDecoration
-import pro.ahoora.zhin.om.util.Converter
-import pro.ahoora.zhin.om.viewModels.MainViewModel
-import android.widget.TextView
-import androidx.core.content.res.ResourcesCompat
+import pro.ahoora.zhin.om.ui.draw.DrawActivity
 import pro.ahoora.zhin.om.ui.nfc.NfcActivity
 import pro.ahoora.zhin.om.ui.qr.QrActivity
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.widget.AppCompatEditText
+import pro.ahoora.zhin.om.util.Converter
+import pro.ahoora.zhin.om.viewModels.MainViewModel
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener, ViewTreeObserver.OnGlobalLayoutListener {
@@ -128,7 +133,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu , menu)
+        menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
@@ -141,7 +146,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             return true
         }
 
-        if (id == android.R.id.toggle) {
+        if (id == android.R.id.home) {
             drawerLayout.openDrawer(GravityCompat.START)
         }
 
@@ -151,13 +156,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun showIpDialog() {
         val alert = AlertDialog.Builder(this)
         alert.setMessage("لطفا ip سرور را وارد کنید :")
-        val view = LayoutInflater.from(this).inflate(R.layout.ip_edit_text , null)
-        val et:AppCompatEditText = view.findViewById(R.id.et_ip)
+        val view = LayoutInflater.from(this).inflate(R.layout.ip_edit_text, null)
+        val et: AppCompatEditText = view.findViewById(R.id.et_ip)
         alert.setView(view)
-        alert.setPositiveButton("اعمال"){dialog, which ->
+        alert.setPositiveButton("اعمال") { dialog, which ->
             patientViewModel.ip = et.text.toString()
             dialog.dismiss()
-        }.setNegativeButton("برگشت") {dialog, which ->
+        }.setNegativeButton("برگشت") { dialog, which ->
             dialog.dismiss()
         }.show()
     }
@@ -181,34 +186,63 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.nav_view_patient -> {
                 toolbar.title = "پرونده بیماران"
             }
             R.id.nav_view_handwrite -> {
-
+                startActivity(Intent(this@MainActivity, HWActivity::class.java))
             }
 
             R.id.nav_view_nfc -> {
                 // start nfc activity
-                startActivity( Intent(this@MainActivity, NfcActivity::class.java))
+                if (checkHasNfcAdapter()) {
+                    startActivity(Intent(this@MainActivity, NfcActivity::class.java))
+                } else {
+                    Log.e(javaClass.simpleName, "sorry. this device does'nt support NFC")
+                }
             }
             R.id.nav_view_qr -> {
                 // start qr activity
-                startActivity( Intent(this@MainActivity, QrActivity::class.java))
+                startActivity(Intent(this@MainActivity, QrActivity::class.java))
             }
 
-            R.id.nav_view_rec ->{
+            R.id.nav_view_rec -> {
+                val filePath = "${Environment.getExternalStorageDirectory()}/recorded_audio.wav"
+                val color = ResourcesCompat.getColor(resources, R.color.green, null)
+                val requestCode = 0
+                AndroidAudioRecorder.with(this)
+                        // Required
+                        .setFilePath(filePath)
+                        .setColor(color)
+                        .setRequestCode(requestCode)
 
+                        // Optional
+                        .setSource(AudioSource.MIC)
+                        .setChannel(AudioChannel.STEREO)
+                        .setSampleRate(AudioSampleRate.HZ_48000)
+                        .setAutoStart(true)
+                        .setKeepDisplayOn(true)
+                        // Start recording
+                        .record()
             }
 
             R.id.nav_view_draw -> {
-
+                startActivity(Intent(this@MainActivity, DrawActivity::class.java))
             }
 
         }
         drawerLayout.closeDrawers()
         return true
+    }
+
+
+    private fun checkHasNfcAdapter(): Boolean = if (packageManager.hasSystemFeature(PackageManager.FEATURE_NFC)) {
+        Log.i("nfc", "Has NFC functionality")
+        true
+    } else {
+        Log.e("nfc", "Has No NFC functionality")
+        false
     }
 
 

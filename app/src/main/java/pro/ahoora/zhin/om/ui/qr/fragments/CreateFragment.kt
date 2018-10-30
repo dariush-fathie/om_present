@@ -1,13 +1,15 @@
-package pro.ahoora.zhin.om.ui.fragment
+package pro.ahoora.zhin.om.ui.qr.fragments
 
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.*
-import android.graphics.Color.WHITE
+import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -44,22 +46,22 @@ class CreateFragment : Fragment(), View.OnClickListener {
     var savePath = Environment.getExternalStorageDirectory().path + "/QRCode/"
     lateinit var bitmap: Bitmap
 
+
+    lateinit var qrGenerator: AsyncQrGenerator
+
     override fun onClick(v: View?) {
 
         when (v?.id) {
             R.id.start -> {
-
-                GenerateClick()
+                generateClick()
             }
             R.id.save -> {
-
                 if (checkStoragePermissions()) {
                     save()
                 }
             }
             R.id.iv_mic -> {
-
-                SpeechToText()
+                speechToText()
             }
         }
 
@@ -69,9 +71,9 @@ class CreateFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (activity as QrActivity).start.setOnClickListener(this)
-        (activity as QrActivity).save.setOnClickListener(this)
-        (activity as QrActivity).iv_mic.setOnClickListener(this)
+        start.setOnClickListener(this)
+        save.setOnClickListener(this)
+        iv_mic.setOnClickListener(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -80,39 +82,43 @@ class CreateFragment : Fragment(), View.OnClickListener {
 
     @Subscribe
     fun decode(e: DecodeQrEvent) {
-
-        (activity as QrActivity).edt_value.setText(e.value)
-        if (e.type.equals("QR_CODE")) {
-            GenerateClick()
+        edt_value.setText(e.value)
+        if (e.type == "QR_CODE") {
+            generateClick()
         } else {
-
-            (activity as QrActivity).QR_Image.setImageResource(R.drawable.bgt)
+            QR_Image.setImageResource(R.drawable.bgt)
         }
-        (activity as QrActivity).vp_mainContainer.setCurrentItem(0)
-
-
+        (activity as QrActivity).vp_mainContainer.currentItem = 0
     }
 
-    fun GenerateClick() {
-        val view = (activity as QrActivity).getCurrentFocus()
+    private fun generateClick() {
+        val view = (activity as QrActivity).currentFocus
         if (view != null) {
             val imm = (activity as QrActivity).getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
-            imm!!.hideSoftInputFromWindow(view.getWindowToken(), 0)
+            imm!!.hideSoftInputFromWindow(view.windowToken, 0)
         }
-        val qrCodeData = (activity as QrActivity).edt_value.text.toString().trim { it <= ' ' }
+        val qrCodeData = edt_value.text.toString().trim { it <= ' ' }
+        if (qrCodeData.isNotEmpty()) {
+            qrGenerator = if (!this::qrGenerator.isInitialized) {
+                AsyncQrGenerator()
+            } else {
+                if (qrGenerator.status == AsyncTask.Status.RUNNING) {
+                    Toast.makeText(activity, "لطفا صبر کنید", Toast.LENGTH_LONG).show()
+                    return
+                } else {
+                    AsyncQrGenerator()
+                }
+            }
+            qrGenerator.execute(qrCodeData)
 
-        if (qrCodeData.length > 0) {
-            generate(qrCodeData)
         } else {
             edt_value.error = "متنی موجود نیست"
         }
 
     }
 
-
-    private fun generate(qrCodeData: String) {
+    private fun generate(qrCodeData: String): Bitmap? {
         val hintsMap = HashMap<EncodeHintType, Any>()
-
         val manager = (activity as QrActivity).getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val display = manager.defaultDisplay
         val point = Point()
@@ -125,42 +131,39 @@ class CreateFragment : Fragment(), View.OnClickListener {
         hintsMap[EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.Q
         hintsMap[EncodeHintType.MARGIN] = 2
 
-
         try {
             val matrix = QRCodeWriter().encode(qrCodeData, BarcodeFormat.QR_CODE, smallerDimension, smallerDimension, hintsMap)
-            val width = matrix.width
-            val height = matrix.height
-            val pixels = IntArray(width * height)
+            val width1 = matrix.width
+            val height1 = matrix.height
+            val pixels = IntArray(width1 * height1)
             // All are 0, or black, by default
-            for (y in 0 until height) {
-                val offset = y * width
-                for (x in 0 until width) {
+            for (y in 0 until height1) {
+                val offset = y * width1
+                for (x in 0 until width1) {
                     //pixels[offset + x] = matrix.get(x, y) ? BLACK : WHITE;
                     pixels[offset + x] = if (matrix.get(x, y))
                         ResourcesCompat.getColor(resources, R.color.colorB, null)
                     else
-                        WHITE
+                        ResourcesCompat.getColor(resources, R.color.androidDefBg, null)
                 }
             }
 
-            bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-            bitmap.setPixels(pixels, 0, width, 0, 0, width, height)
+            bitmap = Bitmap.createBitmap(width1, height1, Bitmap.Config.ARGB_8888)
+            bitmap.setPixels(pixels, 0, width1, 0, 0, width1, height1)
             //setting bitmap to image view
 
             val overlay = BitmapFactory.decodeResource(resources, R.drawable.jin_logo)
             bitmap = mergeBitmaps(overlay, bitmap)
-            (activity as QrActivity).QR_Image.setImageBitmap(bitmap)
+            return bitmap
         } catch (e: WriterException) {
             e.printStackTrace()
+            return null
         }
     }
 
-
     fun mergeBitmaps(overlay: Bitmap, bitmap: Bitmap): Bitmap {
-
         val height = bitmap.height
         val width = bitmap.width
-
         val combined = Bitmap.createBitmap(width, height, bitmap.config)
         val canvas = Canvas(combined)
         val canvasWidth = canvas.width
@@ -199,16 +202,13 @@ class CreateFragment : Fragment(), View.OnClickListener {
     }
 
     private fun save() {
-
-        val result: String
+        val result = "در مسیر $savePath ذخیره شد "
         val generator = Random()
         var n = 10000
         n = generator.nextInt(n)
-
         // try {
-        result = "در مسیر " + savePath + " ذخیره شد "
         val myDir = File(savePath)
-        myDir.mkdirs();
+        myDir.mkdirs()
 
         val fname = "Image-$n.jpg"
         val file = File(myDir, fname)
@@ -239,13 +239,10 @@ class CreateFragment : Fragment(), View.OnClickListener {
 
     override fun onStop() {
         EventBus.getDefault().unregister(this)
-
         super.onStop()
-
     }
 
-
-    private fun SpeechToText() {
+    private fun speechToText() {
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
 
@@ -255,44 +252,44 @@ class CreateFragment : Fragment(), View.OnClickListener {
             startActivityForResult(intent, 10)
         } else {
             Toast.makeText((activity as QrActivity), "دستگاه شما از زبان مورد نظر پشتیبانی نمی کند", Toast.LENGTH_LONG).show()
-
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
         when (requestCode) {
-
             10 -> {
                 if (resultCode == Activity.RESULT_OK && data != null) {
                     val res = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-                    edt_value.setText(res.get(0))
+                    edt_value.setText(res[0])
                 }
             }
         }
     }
 
-    /*    private fun scanQr(){
-        val mReader = MultiFormatReader()
-        val hints = EnumMap<DecodeHintType, Any>(DecodeHintType::class.java)
-        hints.put(DecodeHintType.TRY_HARDER, true)
-// select your barcode formats here
-        val formats = Arrays.asList(BarcodeFormat.QR_CODE)
-        hints.put(DecodeHintType.POSSIBLE_FORMATS, formats)
 
-        mReader.setHints(hints)
+    @SuppressLint("StaticFieldLeak")
+    inner class AsyncQrGenerator : AsyncTask<String, Bitmap, Bitmap>() {
 
-// your camera image here
-        var bitmapI: Bitmap?
-        val width = bitmapI!!.width
-        val height = bitmapI.height
-        val pixels = IntArray(width * height)
-        bitmapI.getPixels(pixels, 0, width, 0, 0, width, height)
-        bitmapI.recycle()
-        bitmapI = null
-        val bb = BinaryBitmap(HybridBinarizer(RGBLuminanceSource(width, height, pixels)))
-        val result = mReader.decodeWithState(bb)
-        val resultString = result.text
-    }*/
+        private var alertBuilder = AlertDialog.Builder(activity)
+        private lateinit var alert: AlertDialog
+
+        override fun onPreExecute() {
+            val view = LayoutInflater.from(activity!!).inflate(R.layout.loading, null)
+            alertBuilder.setView(view)
+            alertBuilder.setCancelable(false)
+            alert = alertBuilder.create()
+            alert.show()
+        }
+
+        override fun doInBackground(vararg params: String?): Bitmap {
+            return generate(params[0]!!)!!
+        }
+
+        override fun onPostExecute(result: Bitmap?) {
+            activity?.QR_Image?.setImageBitmap(result!!)
+            alert.cancel()
+        }
+    }
+
 }

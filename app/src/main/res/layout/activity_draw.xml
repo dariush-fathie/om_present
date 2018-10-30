@@ -6,4 +6,144 @@
     android:layout_height="match_parent"
     tools:context="pro.ahoora.zhin.om.ui.draw.DrawActivity">
 
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/bg"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarFadeDuration="300"
+            android:scrollbarSize="3dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tools_draw"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/fa_regular"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="\uf304"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tools_style"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/fa_regular"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_opacity"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tools_undo"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/fa_regular"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="\uf0e2"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tools_redo"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/fa_regular"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="\uf01e"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tools_select"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/fa_regular"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="\uf245"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tools_pallet"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/fa_regular"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="\uf53f"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tools_fillDrop"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/fa_regular"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="\uf575"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tools_eraser"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/fa_regular"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="\uf12d"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tools_text"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/fa_regular"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:text="\uf031"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <pro.ahoora.zhin.fabricview.FabricView
+        android:id="@+id/fabricView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

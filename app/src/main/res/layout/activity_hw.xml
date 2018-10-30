@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pro.ahoora.zhin.om.ui.HWActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray5"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:fontFamily="@font/ir_sans"
+        app:layout_collapseMode="pin"
+        app:logo="@drawable/jin_logo_24"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="مبدل دستخط"
+        app:titleTextColor="@color/dynamicAndTitleTextColor" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="برای تبدیل دستخط به متن ابتدا باید بر روی دکمه انتخاب کیبورد کلیک کرده و سپس گزینه
+Persian
+Google handwriting Input
+را انتخاب کنید"
+        android:textColor="@color/dynamicAndTitleTextColor"
+        android:textSize="14sp"
+        app:fontFamily="@font/ir_sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_chooseKeyboard"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="انتخاب کیبورد"
+        android:textColor="@color/dynamicAndTitleTextColor"
+        app:fontFamily="@font/ir_sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:contentPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_chooseKeyboard">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ir_sans"
+            android:hint="دستخط خود را امتحان کنید!"
+            android:lines="3"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/dynamicAndTitleTextColor"
+            android:textSize="14sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

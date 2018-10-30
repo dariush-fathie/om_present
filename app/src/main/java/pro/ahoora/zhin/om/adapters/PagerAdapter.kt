@@ -3,8 +3,8 @@ package pro.ahoora.zhin.om.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import pro.ahoora.zhin.om.ui.fragment.CreateFragment
-import pro.ahoora.zhin.om.ui.fragment.ScanFragment
+import pro.ahoora.zhin.om.ui.qr.fragments.CreateFragment
+import pro.ahoora.zhin.om.ui.qr.fragments.ScanFragment
 
 class PagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 

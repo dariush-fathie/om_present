@@ -7,8 +7,6 @@ import pro.ahoora.zhin.om.ui.detail.fragments.ChartsFragment
 import pro.ahoora.zhin.om.ui.detail.fragments.HistoryFragment
 import pro.ahoora.zhin.om.ui.detail.fragments.InformationFragment
 import pro.ahoora.zhin.om.ui.detail.fragments.TajvizFragment
-import pro.ahoora.zhin.om.ui.fragment.CreateFragment
-import pro.ahoora.zhin.om.ui.fragment.ScanFragment
 
 class DetailPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 

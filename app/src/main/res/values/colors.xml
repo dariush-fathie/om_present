@@ -6,6 +6,8 @@
 
 
 
+    <color name="androidDefBg">#FFF8F8F9</color>
+
     <!-- ios color -->
     <color name="red">#fd3b31</color>
     <color name="orange">#fd9401</color>

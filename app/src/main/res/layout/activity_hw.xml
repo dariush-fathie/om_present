@@ -18,7 +18,7 @@
         app:layout_collapseMode="pin"
         app:logo="@drawable/jin_logo_24"
         app:navigationIcon="@drawable/ic_back"
-        app:title="مبدل دستخط"
+        app:title="Handwriting converter"
         app:titleTextColor="@color/dynamicAndTitleTextColor" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -26,10 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="برای تبدیل دستخط به متن ابتدا باید بر روی دکمه انتخاب کیبورد کلیک کرده و سپس گزینه
-Persian
-Google handwriting Input
-را انتخاب کنید"
+        android:text="To convert the handwriting to text you first need to click on the keyboard selection button and then select
+'Persian Google handwriting Input' Option"
         android:textColor="@color/dynamicAndTitleTextColor"
         android:textSize="14sp"
         app:fontFamily="@font/ir_sans"
@@ -44,7 +42,7 @@ Google handwriting Input
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="انتخاب کیبورد"
+        android:text="Keyboard selection"
         android:textColor="@color/dynamicAndTitleTextColor"
         app:fontFamily="@font/ir_sans"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +63,7 @@ Google handwriting Input
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ir_sans"
-            android:hint="دستخط خود را امتحان کنید!"
+            android:hint="Try your handwriting!"
             android:lines="3"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"

@@ -38,7 +38,7 @@
                 android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="نام یارو در"
+                android:text="Name"
                 android:textColor="@color/dynamicAndTitleTextColor"
                 android:textSize="16sp"
                 app:fontFamily="@font/ir_sans" />
@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:text="بیماری خاص"
+                android:text="special disease"
                 android:textColor="@color/staticTextColor"
                 android:textSize="14sp"
                 app:fontFamily="@font/ir_sans" />

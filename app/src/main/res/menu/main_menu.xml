@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/changeIp"
-        android:title="تغییر ip"
+        android:title="Change Ip"
         app:showAsAction="always"
         android:icon="@drawable/ic_edit"/>
 </menu>

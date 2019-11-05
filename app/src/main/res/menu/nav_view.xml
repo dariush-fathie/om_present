@@ -6,37 +6,37 @@
     <item
         android:id="@+id/nav_view_patient"
         android:icon="@drawable/ic_patient"
-        android:title="پرونده بیماران"
+        android:title="Patient records"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_view_qr"
         android:icon="@drawable/ic_qr"
-        android:title="رمزینه ها"
+        android:title="Qr / NFC"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_view_nfc"
         android:icon="@drawable/ic_nfc"
-        android:title="کارت هوشمند"
+        android:title="smart card"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_view_handwrite"
         android:icon="@drawable/ic_handwrite"
-        android:title="مبدل دستخط"
+        android:title="Handwriting converter"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_view_draw"
         android:icon="@drawable/ic_page"
-        android:title="نسخه هویسی"
+        android:title="Prescribe"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_view_rec"
         android:icon="@drawable/ic_record"
-        android:title="صدای درمان"
+        android:title="Voice recording"
         app:showAsAction="ifRoom" />
 
 </menu>

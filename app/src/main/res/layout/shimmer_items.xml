@@ -130,7 +130,7 @@
         android:fontFamily="@font/ir_sans"
         android:padding="16dp"
         android:gravity="center"
-        android:text="به محض جستجو اطلاعات مراجعین لیست می شود"
+        android:text="Patients information is listed as soon as it is searched"
         android:textSize="12sp" />
 </LinearLayout>
 

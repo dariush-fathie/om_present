@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="16dp"
-        android:text="لطفا تگ را به پشت دستگاه بچسپانید"
+        android:text="Please paste the tag on the back of the machine"
         android:textSize="16sp"
         app:fontFamily="@font/ir_sans" />
 
@@ -43,7 +43,7 @@
                 android:textStyle="bold"
                 android:layout_gravity="end"
                 android:textColor="@color/dynamicAndTitleTextColor"
-                android:text="اطلاعات موجود در تگ :"
+                android:text="Information in the tag:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

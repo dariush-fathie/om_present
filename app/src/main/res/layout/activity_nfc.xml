@@ -11,9 +11,10 @@
         android:layout_height="wrap_content"
         android:background="@color/gray5"
         app:fontFamily="@font/ir_sans"
+        app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/jin_logo_24"
         app:navigationIcon="@drawable/ic_back"
-        app:title="smart card"
+        app:title="@string/smart_card"
         app:titleTextColor="@color/dynamicAndTitleTextColor" />
 
 
@@ -23,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Write to tag"
+        android:text="@string/write_to_tag"
         android:textColor="@color/dynamicAndTitleTextColor"
         app:icon="@drawable/ic_upload"
         app:layout_constraintEnd_toStartOf="@+id/btn_read"
@@ -37,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="read tag"
+        android:text="@string/read_tag"
         android:textColor="@color/dynamicAndTitleTextColor"
         app:icon="@drawable/ic_download"
         app:layout_constraintEnd_toEndOf="parent"

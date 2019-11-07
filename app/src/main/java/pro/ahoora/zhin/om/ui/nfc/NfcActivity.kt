@@ -1,5 +1,6 @@
 package pro.ahoora.zhin.om.ui.nfc
 
+import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
@@ -117,6 +118,7 @@ class NfcActivity : AppCompatActivity() {
             mNfcAdapter!!.disableForegroundDispatch(this)
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onNewIntent(intent: Intent) {
         Log.e("tech", intent.toString())
         val tag = intent.getParcelableExtra<Tag>(NfcAdapter.EXTRA_TAG)

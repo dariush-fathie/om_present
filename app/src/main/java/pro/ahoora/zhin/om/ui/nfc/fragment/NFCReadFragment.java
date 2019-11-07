@@ -59,7 +59,7 @@ public class NFCReadFragment extends Fragment {
                 e.printStackTrace();
             }
         } else {
-            mTvMessage.setText("تگ خالی است");
+            mTvMessage.setText(getString(R.string.TheTagIsEmpty));
         }
 
     }

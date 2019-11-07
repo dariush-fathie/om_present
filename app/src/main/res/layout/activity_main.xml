@@ -45,7 +45,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
                         android:background="@drawable/round_edit_box"
-                        android:hint="Enter the patient's name or national code"
+                        android:hint="@string/enter_the_patient_s_name_or_national_code"
                         android:imeOptions="actionSearch|actionDone"
                         android:inputType="number|numberDecimal"
                         android:maxLines="1"
@@ -70,21 +70,18 @@
                         app:layout_constraintTop_toTopOf="@+id/et_search" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        app:layout_constraintBaseline_toBaselineOf="@+id/cloud"
                         android:id="@+id/appCompatTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="8dp"
                         android:paddingStart="8dp"
                         android:paddingTop="8dp"
                         android:paddingEnd="20dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
                         android:paddingBottom="8dp"
-                        android:text="Get From:"
+                        android:text="@string/get_from"
                         app:fontFamily="@font/ir_sans"
-                        app:layout_constraintBottom_toBottomOf="@+id/cloud"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/et_search" />
 
                     <com.google.android.material.button.MaterialButton
@@ -92,36 +89,29 @@
                         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:text="local"
+                        android:text="@string/local"
                         android:textColor="@color/dynamicAndTitleTextColor"
                         app:fontFamily="@font/ir_sans"
                         app:icon="@drawable/ic_database"
                         app:iconSize="24dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/cloud"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/et_search" />
+                        app:layout_constraintStart_toEndOf="@+id/appCompatTextView"
+                        app:layout_constraintTop_toBottomOf="@+id/et_search"
+                        app:layout_constraintTop_toTopOf="@+id/appCompatTextView" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/cloud"
                         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:text="remote"
+                        android:text="@string/remote"
                         android:textColor="@color/dynamicAndTitleTextColor"
                         app:fontFamily="@font/ir_sans"
                         app:icon="@drawable/ic_cloud"
+                        android:layout_marginEnd="8dp"
                         app:iconSize="24dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/local"
-                        app:layout_constraintTop_toBottomOf="@+id/et_search" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/local" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.appcompat.widget.Toolbar
@@ -133,7 +123,7 @@
                     android:background="@color/gray5"
                     app:layout_collapseMode="pin"
                     app:navigationIcon="@drawable/ic_menu"
-                    app:title="سلام"
+                    app:title="@string/hello"
                     app:titleTextColor="@color/dynamicAndTitleTextColor" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>

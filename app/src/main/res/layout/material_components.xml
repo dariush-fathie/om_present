@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="text"
+        android:text="@string/text"
         app:layout_constraintEnd_toStartOf="@+id/materialButton3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="text icon"
+        android:text="@string/text_icon"
         app:icon="@drawable/ic_home"
         app:layout_constraintBaseline_toBaselineOf="@+id/materialButton4"
         app:layout_constraintEnd_toStartOf="@+id/materialButton5"
@@ -35,7 +35,7 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="outlined"
+        android:text="@string/outlined"
         app:layout_constraintBaseline_toBaselineOf="@+id/materialButton7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -57,7 +57,7 @@
         style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="icon"
+        android:text="@string/icon"
         app:icon="@drawable/ic_home"
         app:layout_constraintBaseline_toBaselineOf="@+id/materialButton3"
         app:layout_constraintEnd_toStartOf="@+id/materialButton6"
@@ -69,7 +69,7 @@
         style="@style/Widget.MaterialComponents.Button.TextButton.Dialog.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="dialog icon"
+        android:text="@string/dialog_icon"
         app:icon="@drawable/ic_home"
         app:layout_constraintBaseline_toBaselineOf="@+id/materialButton6"
         app:layout_constraintEnd_toStartOf="@+id/materialButton8"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="outline icon"
+        android:text="@string/outline_icon"
         app:icon="@drawable/ic_home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialButton4" />
@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="unelevated"
+        android:text="@string/unelevated"
         app:layout_constraintStart_toEndOf="@+id/materialButton10"
         app:layout_constraintTop_toBottomOf="@+id/materialButton3" />
 
@@ -107,7 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="unelevated icon"
+        android:text="@string/unelevated_icon"
         app:icon="@drawable/ic_home"
         app:layout_constraintStart_toEndOf="@+id/materialButton11"
         app:layout_constraintTop_toBottomOf="@+id/materialButton3" />
@@ -164,7 +164,7 @@
         app:layout_constraintTop_toBottomOf="@id/guideline1">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:hint="this is hint text "
+            android:hint="@string/this_is_hint_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>

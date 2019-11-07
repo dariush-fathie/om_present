@@ -20,7 +20,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:fontFamily="monospace"
-            android:text="color silver"
+            android:text="@string/color_silver"
             android:textColor="@color/dynamicAndTitleTextColor"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
-            android:text="toolbar bg"
+            android:text="@string/toolbar_bg"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
-            android:text="navigation"
+            android:text="@string/navigation"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btn_toolbar" />
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
-            android:text="bg"
+            android:text="@string/bg"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btn_navigation" />
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
-            android:text="search text"
+            android:text="@string/search_text"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_toolbar"
             app:layout_constraintStart_toEndOf="@+id/btn_search" />
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
-            android:text="toolbar text"
+            android:text="@string/toolbar_text"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_toolbar"
             app:layout_constraintStart_toEndOf="@+id/btn_searchText" />
@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="search bg"
+            android:text="@string/search_bg"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_text"
             app:layout_constraintStart_toStartOf="parent" />
@@ -96,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="separator"
+            android:text="@string/separator"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_text"
             app:layout_constraintStart_toEndOf="@+id/btn_search" />
@@ -105,7 +105,7 @@
             android:id="@+id/btn_bottomBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="bottom bar"
+            android:text="@string/bottom_bar"
             app:layout_constraintBottom_toTopOf="@+id/btn_toolbarText"
             app:layout_constraintStart_toEndOf="@+id/btn_separator" />
 
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
-            android:text="text color"
+            android:text="@string/text_color"
             app:layout_constraintBottom_toTopOf="@+id/btn_toolbar"
             app:layout_constraintStart_toStartOf="parent" />
 

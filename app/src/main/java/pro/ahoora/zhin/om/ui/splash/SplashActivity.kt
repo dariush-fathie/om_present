@@ -70,21 +70,21 @@ class SplashActivity : AppCompatActivity() {
 
 
         val title = TextBuilder
-                .create("Zhin Pro")
+                .create("Jin Pro")
                 .setSize(16f)
                 .setAlpha(0)
                 .setColor(Color.BLACK)
                 .setPosition(Align.SURFACE_CENTER).build()
 
         val zhinCo = TextBuilder
-                .create("Zhin Pro")
+                .create("Jin Pro")
                 .setSize(14f)
                 .setAlpha(0)
                 .setColor(Color.BLACK)
                 .setPosition(Align.SURFACE_CENTER).build()
 
         val zhinWeb = TextBuilder
-                .create("www.MyJin.ir")
+                .create(getString(R.string.WebSite_Jin724))
                 .setSize(12f)
                 .setAlpha(0)
                 .setColor(Color.RED)

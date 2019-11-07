@@ -28,7 +28,7 @@ class DrawActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.tools_draw -> {
                 fabricView.interactionMode = FabricView.DRAW_MODE
-                Toast.makeText(this, "حالت نقاشی انتخاب شد", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.PaintingModeSelected), Toast.LENGTH_SHORT).show()
             }
             R.id.tools_undo -> {
                 fabricView.undo()
@@ -45,11 +45,11 @@ class DrawActivity : AppCompatActivity(), View.OnClickListener {
                 fabricView.interactionMode = FabricView.DRAW_MODE
             }
             R.id.tools_select -> {
-                Toast.makeText(this, "می توانید اشیاء را انتخاب کنید", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.YouCanSelectObjects), Toast.LENGTH_SHORT).show()
                 fabricView.interactionMode = FabricView.SELECT_MODE
             }
             R.id.tools_style -> {
-                Toast.makeText(this, "تغییر خطوط ضمینه", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.ChangeBackgroundLines), Toast.LENGTH_SHORT).show()
                 when (i) {
                     0 -> {
                         fabricView.backgroundMode = FabricView.BACKGROUND_STYLE_BLANK

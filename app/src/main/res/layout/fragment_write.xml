@@ -27,7 +27,7 @@
         android:textSize="16sp"
         android:padding="16dp"
         app:fontFamily="@font/ir_sans"
-        android:text="Please enter the text you want, then paste the tag into the back of the device" />
+        android:text="@string/please_enter_the_text_you_want_then_paste_the_tag_into_the_back_of_the_device" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/logo"

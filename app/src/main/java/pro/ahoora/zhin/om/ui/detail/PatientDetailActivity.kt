@@ -18,7 +18,7 @@ class PatientDetailActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        val pagerAdapter = DetailPagerAdapter(supportFragmentManager)
+        val pagerAdapter = DetailPagerAdapter(supportFragmentManager,this)
         detailPager.adapter = pagerAdapter
         tbl_detail.setupWithViewPager(detailPager)
 

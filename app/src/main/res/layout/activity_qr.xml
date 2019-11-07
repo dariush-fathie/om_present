@@ -5,14 +5,15 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        app:logo="@drawable/jin_logo_24"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/gray5"
         app:fontFamily="@font/ir_sans"
+        app:layout_constraintTop_toTopOf="parent"
+        app:logo="@drawable/jin_logo_24"
         app:navigationIcon="@drawable/ic_back"
-        app:title="Qr"
+        app:title="@string/Qr"
         app:titleTextColor="@color/dynamicAndTitleTextColor" />
 
     <com.google.android.material.tabs.TabLayout

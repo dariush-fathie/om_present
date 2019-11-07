@@ -1,20 +1,22 @@
 package pro.ahoora.zhin.om.adapters
 
+import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.fragment.app.FragmentPagerAdapter
+import pro.ahoora.zhin.om.R
 import pro.ahoora.zhin.om.ui.detail.fragments.ChartsFragment
 import pro.ahoora.zhin.om.ui.detail.fragments.HistoryFragment
 import pro.ahoora.zhin.om.ui.detail.fragments.InformationFragment
 import pro.ahoora.zhin.om.ui.detail.fragments.TajvizFragment
 
-class DetailPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
+class DetailPagerAdapter(fm: FragmentManager,val context: Context) : FragmentPagerAdapter(fm) {
 
-    override fun getItem(position: Int): Fragment? {
+    override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> InformationFragment()
-            0 -> HistoryFragment()
-            0 -> TajvizFragment()
+            1 -> HistoryFragment()
+            2-> TajvizFragment()
             else -> ChartsFragment()
         }
     }
@@ -25,10 +27,11 @@ class DetailPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position) {
-            0 -> "اطلاعات بیمار"
-            1 -> "مراجعات قبلی"
-            2 -> "تجویزات"
-            else -> "نمودارها"
+            0 -> context.getString(R.string.PatientInformation)
+            1 -> context.getString(R.string.PreviousRefers)
+            2 -> context.getString(R.string.prescriptions)
+            else -> context.getString(R.string.Charts)
+
         }
     }
 

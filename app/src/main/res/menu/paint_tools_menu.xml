@@ -5,48 +5,48 @@
     <item
         android:id="@+id/paint_edit"
         android:icon="@drawable/ic_edit"
-        android:title="edit"
+        android:title="@string/edit"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/paint_clean"
         android:icon="@drawable/ic_clean"
-        android:title="clean"
+        android:title="@string/clean"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/paint_erase"
         android:icon="@drawable/ic_erase"
-        android:title="erase"
+        android:title="@string/erase"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/paint_undo"
         android:icon="@drawable/ic_undo"
-        android:title="undo"
+        android:title="@string/undo"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/paint_redo"
         android:icon="@drawable/ic_redo"
-        android:title="redo"
+        android:title="@string/redo"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/paint_text"
         android:icon="@drawable/ic_text"
-        android:title="text"
+        android:title="@string/text"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/paint_textSize"
         android:icon="@drawable/ic_text_size"
-        android:title="text size"
+        android:title="@string/text_size"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/paint_color"
         android:icon="@drawable/ic_color"
-        android:title="color"
+        android:title="@string/color"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/paint_insert"
         android:icon="@drawable/ic_insert"
-        android:title="insert"
+        android:title="@string/insert"
         app:showAsAction="ifRoom" />
 
 </menu>

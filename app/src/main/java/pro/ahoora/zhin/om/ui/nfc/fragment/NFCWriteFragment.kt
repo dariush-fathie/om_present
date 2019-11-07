@@ -22,9 +22,8 @@ import java.nio.charset.Charset
 class NFCWriteFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_write, container, false)
 
-        return view
+        return inflater.inflate(R.layout.fragment_write, container, false)
     }
 
 
@@ -42,7 +41,7 @@ class NFCWriteFragment : Fragment() {
         progress!!.visibility = View.VISIBLE
         val text = et_message.text?.toString()
         if (text == null) {
-            Toast.makeText(activity, "پیام نباید خالی باشد", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, getString(R.string.TheMessageShouldNotBeBlank), Toast.LENGTH_LONG).show()
         } else {
             writeToNfc(ndef, text)
         }

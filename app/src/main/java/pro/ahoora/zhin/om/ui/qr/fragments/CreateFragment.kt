@@ -74,6 +74,8 @@ class CreateFragment : Fragment(), View.OnClickListener {
         start.setOnClickListener(this)
         save.setOnClickListener(this)
         iv_mic.setOnClickListener(this)
+
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -103,7 +105,7 @@ class CreateFragment : Fragment(), View.OnClickListener {
                 AsyncQrGenerator()
             } else {
                 if (qrGenerator.status == AsyncTask.Status.RUNNING) {
-                    Toast.makeText(activity, "لطفا صبر کنید", Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, getString(R.string.PleaseWait), Toast.LENGTH_LONG).show()
                     return
                 } else {
                     AsyncQrGenerator()
@@ -112,7 +114,7 @@ class CreateFragment : Fragment(), View.OnClickListener {
             qrGenerator.execute(qrCodeData)
 
         } else {
-            edt_value.error = "متنی موجود نیست"
+            edt_value.error = getString(R.string.NoTextAvailable)
         }
 
     }
@@ -202,7 +204,7 @@ class CreateFragment : Fragment(), View.OnClickListener {
     }
 
     private fun save() {
-        val result = "در مسیر $savePath ذخیره شد "
+        val result = getString(R.string.path)+savePath+ getString(R.string.saved)
         val generator = Random()
         var n = 10000
         n = generator.nextInt(n)
@@ -251,7 +253,7 @@ class CreateFragment : Fragment(), View.OnClickListener {
         if (intent.resolveActivity((activity as QrActivity).packageManager) != null) {
             startActivityForResult(intent, 10)
         } else {
-            Toast.makeText((activity as QrActivity), "دستگاه شما از زبان مورد نظر پشتیبانی نمی کند", Toast.LENGTH_LONG).show()
+            Toast.makeText((activity as QrActivity), getString(R.string.NotSupportTheLanguage), Toast.LENGTH_LONG).show()
         }
     }
 

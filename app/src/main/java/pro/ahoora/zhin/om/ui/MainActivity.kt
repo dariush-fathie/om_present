@@ -3,11 +3,13 @@ package pro.ahoora.zhin.om.ui
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
 import android.view.*
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -32,7 +34,9 @@ import pro.ahoora.zhin.om.ui.draw.DrawActivity
 import pro.ahoora.zhin.om.ui.nfc.NfcActivity
 import pro.ahoora.zhin.om.ui.qr.QrActivity
 import pro.ahoora.zhin.om.util.Converter
+import pro.ahoora.zhin.om.util.LocaleHelper
 import pro.ahoora.zhin.om.viewModels.MainViewModel
+import java.util.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener, ViewTreeObserver.OnGlobalLayoutListener {
@@ -59,7 +63,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         initVMs()
 
-        toolbar.title = "پرونده بیماران"
+        toolbar.title = getString(R.string.MedicalRecords)
 
         width = Converter.getScreenWidthPx(this) - 300
         setSupportActionBar(toolbar)
@@ -155,14 +159,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun showIpDialog() {
         val alert = AlertDialog.Builder(this)
-        alert.setMessage("لطفا ip سرور را وارد کنید :")
+        alert.setMessage(getString(R.string.EnterIp))
         val view = LayoutInflater.from(this).inflate(R.layout.ip_edit_text, null)
         val et: AppCompatEditText = view.findViewById(R.id.et_ip)
         alert.setView(view)
-        alert.setPositiveButton("اعمال") { dialog, which ->
+        alert.setPositiveButton(getString(R.string.Action)) { dialog, which ->
             patientViewModel.ip = et.text.toString()
             dialog.dismiss()
-        }.setNegativeButton("برگشت") { dialog, which ->
+        }.setNegativeButton(getString(R.string.Return)) { dialog, which ->
             dialog.dismiss()
         }.show()
     }
@@ -188,7 +192,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_view_patient -> {
-                toolbar.title = "پرونده بیماران"
+                toolbar.title = getString(R.string.MedicalRecords)
             }
             R.id.nav_view_handwrite -> {
                 startActivity(Intent(this@MainActivity, HWActivity::class.java))
@@ -229,6 +233,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.nav_view_draw -> {
                 startActivity(Intent(this@MainActivity, DrawActivity::class.java))
+            }
+
+            R.id.nav_view_lang -> {
+
+                LocaleHelper.onAttach(this, "fa")
             }
 
         }

@@ -4,8 +4,10 @@ ext {
             retrofit : '2.4.0',
             rxAndroid : '2.1.0',
             rxJava : '2.2.2',
-            okHttp : '3.11.0',
+            okHttp : '3.12.0',
             eventBus : '3.1.1',
-            glide : '4.8.0'
+            glide : '4.8.0',
+            fragment_ktx:'1.2.0-rc01',
+            core_version:'1.2.0-beta01'
     ]
 }

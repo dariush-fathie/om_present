@@ -64,7 +64,7 @@ class QrActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
 
         setSupportActionBar(toolbar)
 
-        vp_mainContainer.adapter = PagerAdapter(supportFragmentManager)
+        vp_mainContainer.adapter = PagerAdapter(supportFragmentManager,this)
 
         vp_mainContainer.addOnPageChangeListener(this)
         vp_mainContainer.offscreenPageLimit = 2
@@ -90,13 +90,13 @@ class QrActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 EventBus.getDefault().post(VisibilityQrEvent(2))
             } else {
-                Toast.makeText(this@QrActivity, "اجازه دسترسی به حافظه داده نشد", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@QrActivity, getString(R.string.NoAccessToMemory), Toast.LENGTH_LONG).show()
             }
         } else if (requestCode == REQUEST_CAMERA) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 EventBus.getDefault().post(VisibilityQrEvent(0))
             } else {
-                Toast.makeText(this@QrActivity, "اجازه دسترسی به دوربین داده نشد", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@QrActivity, getString(R.string.NoAccessToCamera), Toast.LENGTH_LONG).show()
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)

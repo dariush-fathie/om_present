@@ -6,37 +6,43 @@
     <item
         android:id="@+id/nav_view_patient"
         android:icon="@drawable/ic_patient"
-        android:title="Patient records"
+        android:title="@string/MedicalRecords"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_view_qr"
         android:icon="@drawable/ic_qr"
-        android:title="Qr / NFC"
+        android:title="@string/qr_nfc"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_view_nfc"
         android:icon="@drawable/ic_nfc"
-        android:title="smart card"
+        android:title="@string/smart_card"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_view_handwrite"
         android:icon="@drawable/ic_handwrite"
-        android:title="Handwriting converter"
+        android:title="@string/handwriting_converter"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_view_draw"
         android:icon="@drawable/ic_page"
-        android:title="Prescribe"
+        android:title="@string/prescribe"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_view_rec"
         android:icon="@drawable/ic_record"
-        android:title="Voice recording"
+        android:title="@string/voice_recording"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/nav_view_lang"
+        android:icon="@drawable/ic_record"
+        android:title="@string/change_language"
         app:showAsAction="ifRoom" />
 
 </menu>

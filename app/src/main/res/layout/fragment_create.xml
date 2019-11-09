@@ -16,7 +16,7 @@
         android:paddingStart="40dp"
         android:paddingEnd="16dp"
         android:textSize="14sp"
-        app:fontFamily="@font/ir_sans"
+     
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,7 +40,7 @@
         android:layout_weight="1"
         android:text="@string/save"
         android:textColor="@color/dynamicAndTitleTextColor"
-        app:fontFamily="@font/ir_sans"
+     
         app:icon="@drawable/ic_save"
         app:layout_constraintEnd_toStartOf="@+id/start"
         app:layout_constraintHorizontal_bias="0.5"
@@ -56,7 +56,7 @@
         android:layout_weight="1"
         android:text="@string/create"
         android:textColor="@color/dynamicAndTitleTextColor"
-        app:fontFamily="@font/ir_sans"
+     
         app:icon="@drawable/ic_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

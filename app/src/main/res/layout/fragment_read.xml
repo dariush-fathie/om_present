@@ -14,7 +14,7 @@
         android:padding="16dp"
         android:text="@string/please_paste_the_tag_on_the_back_of_the_machine"
         android:textSize="16sp"
-        app:fontFamily="@font/ir_sans" />
+         />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/logo"

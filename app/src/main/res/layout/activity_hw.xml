@@ -14,7 +14,7 @@
         android:background="@color/gray5"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        app:fontFamily="@font/ir_sans"
+        
         app:layout_collapseMode="pin"
         app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/jin_logo_24"
@@ -29,8 +29,9 @@
         android:layout_margin="16dp"
         android:text="@string/to_convert_the_handwriting_to_text_you_first_need_to_click_on_the_keyboard_selection_button_and_then_select_persian_google_handwriting_input_option"
         android:textColor="@color/dynamicAndTitleTextColor"
-        android:textSize="14sp"
-        app:fontFamily="@font/ir_sans"
+        android:textSize="13sp"
+        android:lineSpacingExtra="@dimen/activity_horizontal_margin"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -44,7 +45,7 @@
         android:layout_marginEnd="16dp"
         android:text="@string/keyboard_selection"
         android:textColor="@color/dynamicAndTitleTextColor"
-        app:fontFamily="@font/ir_sans"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2" />
@@ -62,7 +63,6 @@
         <androidx.appcompat.widget.AppCompatEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ir_sans"
             android:hint="@string/try_your_handwriting"
             android:lines="3"
             android:paddingTop="8dp"

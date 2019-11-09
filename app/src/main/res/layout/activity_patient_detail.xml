@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 app:layout_collapseMode="pin"
                 app:navigationIcon="@drawable/ic_back"
-                app:title="@string/MedicalRecords"
+                app:title="@string/PatientReception"
                 app:titleTextColor="@color/dynamicAndTitleTextColor" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>

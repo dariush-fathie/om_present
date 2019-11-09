@@ -6,7 +6,7 @@
     <item
         android:id="@+id/nav_view_patient"
         android:icon="@drawable/ic_patient"
-        android:title="@string/MedicalRecords"
+        android:title="@string/PatientReception"
         app:showAsAction="ifRoom" />
 
     <item

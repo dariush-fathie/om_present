@@ -52,7 +52,7 @@
                         android:paddingStart="20dp"
                         android:paddingEnd="20dp"
                         android:textSize="14sp"
-                        app:fontFamily="@font/ir_sans"
+                        
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -80,7 +80,7 @@
                         android:layout_marginTop="8dp"
                         android:paddingBottom="8dp"
                         android:text="@string/get_from"
-                        app:fontFamily="@font/ir_sans"
+                        
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/et_search" />
 
@@ -91,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/local"
                         android:textColor="@color/dynamicAndTitleTextColor"
-                        app:fontFamily="@font/ir_sans"
+                        
                         app:icon="@drawable/ic_database"
                         app:iconSize="24dp"
                         app:layout_constraintEnd_toStartOf="@+id/cloud"
@@ -106,7 +106,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/remote"
                         android:textColor="@color/dynamicAndTitleTextColor"
-                        app:fontFamily="@font/ir_sans"
+                        
                         app:icon="@drawable/ic_cloud"
                         android:layout_marginEnd="8dp"
                         app:iconSize="24dp"
@@ -116,7 +116,7 @@
 
                 <androidx.appcompat.widget.Toolbar
                     app:logo="@drawable/jin_logo_24"
-                    app:fontFamily="@font/ir_sans"
+                    
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -27,7 +27,7 @@
     <string name="NoAccessToMemory">No access to memory</string>
     <string name="NoAccessToCamera">No access to camera</string>
     <string name="WebSite_Jin724">www.jin724.com</string>
-    <string name="MedicalRecords">\u0020Medical records</string>
+    <string name="PatientReception">\u0020Patient reception</string>
     <string name="EnterIp">Please enter the IP server:</string>
     <string name="Action">action</string>
     <string name="Return">Return</string>

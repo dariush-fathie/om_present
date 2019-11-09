@@ -41,7 +41,7 @@
                 android:text="@string/name"
                 android:textColor="@color/dynamicAndTitleTextColor"
                 android:textSize="16sp"
-                app:fontFamily="@font/ir_sans" />
+                 />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_sickness"
@@ -51,7 +51,7 @@
                 android:text="@string/special_disease"
                 android:textColor="@color/staticTextColor"
                 android:textSize="14sp"
-                app:fontFamily="@font/ir_sans" />
+                 />
         </LinearLayout>
 
     </RelativeLayout>

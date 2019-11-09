@@ -14,7 +14,7 @@
         android:layout_height="40dp" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        app:fontFamily="@font/ir_sans"
+        
         android:textColor="@color/dynamicAndTitleTextColor"
         android:textSize="14sp"
         android:id="@+id/tv"

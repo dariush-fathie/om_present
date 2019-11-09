@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/iv_light"
             android:layout_centerHorizontal="true"
-            app:fontFamily="@font/ir_sans"
+            
             android:text="@string/on"
             android:textColor="@color/white"
             android:textSize="14sp" />

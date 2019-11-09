@@ -9,7 +9,7 @@ android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "pro.ahoora.zhin.om_present"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -107,5 +107,7 @@ dependencies {
     implementation 'com.github.adrielcafe:AndroidAudioRecorder:0.3.0'
 
     implementation 'ru.superjob:kotlin-permissions:1.0.3'
+
+    implementation 'com.github.franmontiel:LocaleChanger:0.9.2'
 
 }

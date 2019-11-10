@@ -22,6 +22,8 @@ import cafe.adriel.androidaudiorecorder.AndroidAudioRecorder
 import cafe.adriel.androidaudiorecorder.model.AudioChannel
 import cafe.adriel.androidaudiorecorder.model.AudioSampleRate
 import cafe.adriel.androidaudiorecorder.model.AudioSource
+import com.franmontiel.localechanger.LocaleChanger
+import com.franmontiel.localechanger.utils.ActivityRecreationHelper
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pro.ahoora.zhin.om.R
@@ -34,6 +36,7 @@ import pro.ahoora.zhin.om.ui.qr.QrActivity
 import pro.ahoora.zhin.om.util.Converter
 import pro.ahoora.zhin.om.util.LocaleHelper
 import pro.ahoora.zhin.om.viewModels.MainViewModel
+import java.util.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener, ViewTreeObserver.OnGlobalLayoutListener {
@@ -234,13 +237,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.nav_view_lang -> {
 
-                var lang="en"
+              var lang="en"
 
                 if (LocaleHelper.getLanguage(this)=="en"){
                    lang="fa"
                 }
                 LocaleHelper.onAttach(this, lang)
-                recreate()
+
+
+                ActivityRecreationHelper.recreate(this, true)
             }
 
         }

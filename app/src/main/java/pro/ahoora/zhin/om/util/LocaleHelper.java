@@ -8,6 +8,8 @@ import android.os.Build;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 
+import com.franmontiel.localechanger.LocaleChanger;
+
 import java.util.Locale;
 
 /**
@@ -52,8 +54,15 @@ public class LocaleHelper {
 
     @TargetApi(Build.VERSION_CODES.N)
     private static Context updateResources(Context context, String language) {
-        Locale locale = new Locale(language);
-        Locale.setDefault(locale);
+
+        String country="US";
+
+        if (!language.equals("en")){
+            country="IR";
+        }
+
+        Locale locale = new Locale(language, country);
+        LocaleChanger.setLocale(locale);
 
         Configuration configuration = context.getResources().getConfiguration();
         configuration.setLocale(locale);

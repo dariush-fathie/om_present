@@ -5,7 +5,8 @@ import android.content.SharedPreferences
 
 class SharedPrefs(context: Context) {
 
-    val hostIP = "default_host_ip"
+    private val hostIP = "default_host_ip"
+    private  val localeSelectedLanguage="Locale.Selected.Language"
     var sp: SharedPreferences = context.getSharedPreferences("def", 0)
 
 
@@ -15,6 +16,14 @@ class SharedPrefs(context: Context) {
 
     fun getLocalHostIP(): String {
         return sp.getString(hostIP, "192.168.1.241")!!
+    }
+
+    fun setLocaleSelectedLanguage(lang: String) {
+        sp.edit().putString(localeSelectedLanguage, lang).apply()
+    }
+
+    fun getLocaleSelectedLanguage(defaultLanguage:String ): String {
+        return sp.getString(localeSelectedLanguage, defaultLanguage)!!
     }
 
 }

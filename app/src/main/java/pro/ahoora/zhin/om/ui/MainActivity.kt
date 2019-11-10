@@ -2,9 +2,11 @@ package pro.ahoora.zhin.om.ui
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Environment
+import android.preference.PreferenceManager
 import android.util.Log
 import android.view.*
 import android.view.inputmethod.InputMethodManager
@@ -36,7 +38,9 @@ import pro.ahoora.zhin.om.ui.nfc.NfcActivity
 import pro.ahoora.zhin.om.ui.qr.QrActivity
 import pro.ahoora.zhin.om.util.Converter
 import pro.ahoora.zhin.om.util.LocaleHelper
+import pro.ahoora.zhin.om.util.SharedPrefs
 import pro.ahoora.zhin.om.viewModels.MainViewModel
+import java.util.*
 
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener, ViewTreeObserver.OnGlobalLayoutListener {
@@ -243,13 +247,16 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             R.id.nav_view_lang -> {
 
                 var lang = "en"
+                var country = "US"
 
-                if (LocaleHelper.getLanguage(this) == "en") {
+                if (SharedPrefs(this).getLocaleSelectedLanguage("en") == "en") {
                     lang = "fa"
+                    country = "IR"
                 }
-                LocaleHelper.onAttach(this, lang)
+                SharedPrefs(this).setLocaleSelectedLanguage(lang)
 
-
+                val locale = Locale(lang, country)
+                LocaleChanger.setLocale(locale)
                 ActivityRecreationHelper.recreate(this, true)
             }
 

@@ -3,8 +3,9 @@ package pro.ahoora.zhin.om.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import pro.ahoora.zhin.om.R
+import pro.ahoora.zhin.om.base.BaseActivity
 
-class PaintActivity : AppCompatActivity() {
+class PaintActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

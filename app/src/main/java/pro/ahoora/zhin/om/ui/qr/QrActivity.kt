@@ -14,9 +14,10 @@ import kotlinx.android.synthetic.main.activity_qr.*
 import org.greenrobot.eventbus.EventBus
 import pro.ahoora.zhin.om.R
 import pro.ahoora.zhin.om.adapters.PagerAdapter
+import pro.ahoora.zhin.om.base.BaseActivity
 import pro.ahoora.zhin.om.event.VisibilityQrEvent
 
-class QrActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
+class QrActivity : BaseActivity(), ViewPager.OnPageChangeListener {
 
     private val rwRequest = 1080
     private val REQUEST_CAMERA = 1081

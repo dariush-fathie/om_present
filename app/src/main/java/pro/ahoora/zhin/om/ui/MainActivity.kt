@@ -28,6 +28,7 @@ import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pro.ahoora.zhin.om.R
 import pro.ahoora.zhin.om.adapters.SearchAdapter
+import pro.ahoora.zhin.om.base.BaseActivity
 import pro.ahoora.zhin.om.model.Patient
 import pro.ahoora.zhin.om.ui.decoration.VerticalLinearLayoutMangerDecoration
 import pro.ahoora.zhin.om.ui.draw.DrawActivity
@@ -36,10 +37,9 @@ import pro.ahoora.zhin.om.ui.qr.QrActivity
 import pro.ahoora.zhin.om.util.Converter
 import pro.ahoora.zhin.om.util.LocaleHelper
 import pro.ahoora.zhin.om.viewModels.MainViewModel
-import java.util.*
 
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener, ViewTreeObserver.OnGlobalLayoutListener {
+class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener, ViewTreeObserver.OnGlobalLayoutListener {
 
     var width = 0
 
@@ -56,6 +56,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         shimmerLayout.stopShimmer()
     }
 
+
+    override fun attachBaseContext(newBase: Context) {
+        val x = LocaleChanger.configureBaseContext(newBase)
+        super.attachBaseContext(x)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,7 +100,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             return@setOnEditorActionListener true
         }
 
-       // drawerLayout.openDrawer(GravityCompat.START)
+        // drawerLayout.openDrawer(GravityCompat.START)
     }
 
     private lateinit var patientViewModel: MainViewModel
@@ -237,10 +242,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.nav_view_lang -> {
 
-              var lang="en"
+                var lang = "en"
 
-                if (LocaleHelper.getLanguage(this)=="en"){
-                   lang="fa"
+                if (LocaleHelper.getLanguage(this) == "en") {
+                    lang = "fa"
                 }
                 LocaleHelper.onAttach(this, lang)
 

@@ -17,10 +17,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_nfc.*
 import pro.ahoora.zhin.om.R
+import pro.ahoora.zhin.om.base.BaseActivity
 import pro.ahoora.zhin.om.ui.nfc.fragment.NFCReadFragment
 import pro.ahoora.zhin.om.ui.nfc.fragment.NFCWriteFragment
 
-class NfcActivity : AppCompatActivity() {
+class NfcActivity : BaseActivity() {
 
 
     private var mNfcWriteFragment: NFCWriteFragment? = null

@@ -11,8 +11,9 @@ import me.priyesh.chroma.ColorMode
 import me.priyesh.chroma.ColorSelectListener
 import pro.ahoora.zhin.fabricview.FabricView
 import pro.ahoora.zhin.om.R
+import pro.ahoora.zhin.om.base.BaseActivity
 
-class DrawActivity : AppCompatActivity(), View.OnClickListener {
+class DrawActivity : BaseActivity(), View.OnClickListener {
 
     var i = 0
 

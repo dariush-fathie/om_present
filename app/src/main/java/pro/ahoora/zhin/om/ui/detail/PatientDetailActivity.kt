@@ -9,8 +9,9 @@ import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_patient_detail.*
 import pro.ahoora.zhin.om.R
 import pro.ahoora.zhin.om.adapters.DetailPagerAdapter
+import pro.ahoora.zhin.om.base.BaseActivity
 
-class PatientDetailActivity : AppCompatActivity() {
+class PatientDetailActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

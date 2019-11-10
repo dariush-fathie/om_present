@@ -8,8 +8,9 @@ import android.view.MenuItem
 import android.view.inputmethod.InputMethodManager
 import kotlinx.android.synthetic.main.activity_hw.*
 import pro.ahoora.zhin.om.R
+import pro.ahoora.zhin.om.base.BaseActivity
 
-class HWActivity : AppCompatActivity() {
+class HWActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

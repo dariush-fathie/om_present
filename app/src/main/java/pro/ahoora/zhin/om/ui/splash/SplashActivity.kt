@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.kotlinpermissions.KotlinPermissions
 import kotlinx.android.synthetic.main.activity_splash.*
 import pro.ahoora.zhin.om.R
+import pro.ahoora.zhin.om.base.BaseActivity
 import pro.ahoora.zhin.om.ui.MainActivity
 import su.levenetc.android.textsurface.TextBuilder
 import su.levenetc.android.textsurface.animations.Delay
@@ -18,7 +19,7 @@ import su.levenetc.android.textsurface.contants.Align
 import su.levenetc.android.textsurface.contants.Side
 
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/jin_logo_24"
         app:navigationIcon="@drawable/ic_back"
-        app:title="@string/Qr"
+        app:title="@string/qr"
         app:titleTextColor="@color/dynamicAndTitleTextColor" />
 
     <com.google.android.material.tabs.TabLayout

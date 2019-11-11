@@ -2,6 +2,7 @@ package pro.ahoora.zhin.om.util
 
 import android.content.Context
 import android.content.SharedPreferences
+import java.util.*
 
 class SharedPrefs(context: Context) {
 
@@ -22,8 +23,12 @@ class SharedPrefs(context: Context) {
         sp.edit().putString(localeSelectedLanguage, lang).apply()
     }
 
-    fun getLocaleSelectedLanguage(defaultLanguage:String ): String {
-        return sp.getString(localeSelectedLanguage, defaultLanguage)!!
+    fun getLocaleSelectedLanguage(): String {
+        var defLang=Locale.getDefault().language
+        if (defLang!="fa"){
+            defLang="en"
+        }
+        return sp.getString(localeSelectedLanguage, defLang)!!
     }
 
 }

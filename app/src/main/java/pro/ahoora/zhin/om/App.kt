@@ -12,14 +12,14 @@ class App : Application() {
 
 
     private val supportedLocales = listOf(
-            Locale("en", "US"),
-            Locale("fa", "IR")
+            Locale("fa", "IR"),
+            Locale("en", "US")
+
     )
 
 
     override fun onCreate() {
         super.onCreate()
-       // LocaleChanger.initialize(internal fun getApplicationContext(): ???);
         LocaleChanger.initialize(baseContext,supportedLocales)
     }
 

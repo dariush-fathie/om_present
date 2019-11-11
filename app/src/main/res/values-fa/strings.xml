@@ -50,7 +50,6 @@
     <string name="write_to_tag">نوشتن بر برچسپ</string>
     <string name="read_tag">خواندن برچسپ</string>
     <string name="characteristics">مشخصات</string>
-    <string name="Qr">\u0020تولید اطلاعات امن</string>
     <string name="color_silver">color silver</string>
     <string name="search_bg">search bg</string>
     <string name="separator">separator</string>
@@ -95,7 +94,7 @@
     <string name="edit">ویرایش</string>
     <string name="share">اشتراک گذاری</string>
     <string name="change_ip">تغییر Ip</string>
-    <string name="qr_nfc">\u0020تولید اطلاعات امن</string>
+    <string name="qr">\u0020تولید اطلاعات امن</string>
     <string name="handwriting_converter">\u0020مبدل دستخط</string>
     <string name="prescribe">\u0020نسخه نویسی و تجویز</string>
     <string name="voice_recording">\u0020صدای درمان</string>

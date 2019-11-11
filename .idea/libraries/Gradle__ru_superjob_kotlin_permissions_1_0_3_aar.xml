@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: ru.superjob:kotlin-permissions:1.0.3@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/185d938b36432ace39233ba1f8dc8d6d/jetified-kotlin-permissions-1.0.3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/185d938b36432ace39233ba1f8dc8d6d/jetified-kotlin-permissions-1.0.3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d8adf991d9010eadb550cbea1cc00aab/jetified-kotlin-permissions-1.0.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d8adf991d9010eadb550cbea1cc00aab/jetified-kotlin-permissions-1.0.3/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

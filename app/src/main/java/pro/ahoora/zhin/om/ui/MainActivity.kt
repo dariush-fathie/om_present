@@ -10,6 +10,7 @@ import android.preference.PreferenceManager
 import android.util.Log
 import android.view.*
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -249,11 +250,12 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 var lang = "en"
                 var country = "US"
 
-                if (SharedPrefs(this).getLocaleSelectedLanguage("en") == "en") {
+                if (SharedPrefs(this).getLocaleSelectedLanguage() == "en") {
                     lang = "fa"
                     country = "IR"
                 }
                 SharedPrefs(this).setLocaleSelectedLanguage(lang)
+
 
                 val locale = Locale(lang, country)
                 LocaleChanger.setLocale(locale)

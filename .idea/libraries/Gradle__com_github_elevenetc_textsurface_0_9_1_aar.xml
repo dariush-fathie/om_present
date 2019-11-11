@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.elevenetc:textsurface:0.9.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/210d0879d92f01581aaccc11c9eaadd5/jetified-textsurface-0.9.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/210d0879d92f01581aaccc11c9eaadd5/jetified-textsurface-0.9.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/54d622b3457e3c55f7f324a3500d6d8b/jetified-textsurface-0.9.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/54d622b3457e3c55f7f324a3500d6d8b/jetified-textsurface-0.9.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -49,6 +49,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     var width = 0
 
 
+
     override fun onStart() {
         super.onStart()
         shimmerLayout.visibility = View.VISIBLE

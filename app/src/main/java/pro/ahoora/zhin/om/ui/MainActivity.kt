@@ -62,12 +62,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         shimmerLayout.stopShimmer()
     }
 
-
-    override fun attachBaseContext(newBase: Context) {
-        val x = LocaleChanger.configureBaseContext(newBase)
-        super.attachBaseContext(x)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -253,7 +247,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
                 if (SharedPrefs(this).getLocaleSelectedLanguage() == "en") {
                     lang = "fa"
-                    country = "IR"
+                    country = "rIR"
                 }
                 SharedPrefs(this).setLocaleSelectedLanguage(lang)
 

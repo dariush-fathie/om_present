@@ -12,7 +12,7 @@ class App : Application() {
 
 
     private val supportedLocales = listOf(
-            Locale("fa", "IR"),
+            Locale("fa", "rIR"),
             Locale("en", "US")
 
     )

@@ -2,18 +2,14 @@ package pro.ahoora.zhin.om.ui
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Environment
-import android.preference.PreferenceManager
 import android.util.Log
 import android.view.*
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.GravityCompat
@@ -25,8 +21,6 @@ import cafe.adriel.androidaudiorecorder.AndroidAudioRecorder
 import cafe.adriel.androidaudiorecorder.model.AudioChannel
 import cafe.adriel.androidaudiorecorder.model.AudioSampleRate
 import cafe.adriel.androidaudiorecorder.model.AudioSource
-import com.franmontiel.localechanger.LocaleChanger
-import com.franmontiel.localechanger.utils.ActivityRecreationHelper
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import pro.ahoora.zhin.om.R
@@ -38,7 +32,6 @@ import pro.ahoora.zhin.om.ui.draw.DrawActivity
 import pro.ahoora.zhin.om.ui.nfc.NfcActivity
 import pro.ahoora.zhin.om.ui.qr.QrActivity
 import pro.ahoora.zhin.om.util.Converter
-import pro.ahoora.zhin.om.util.LocaleHelper
 import pro.ahoora.zhin.om.util.SharedPrefs
 import pro.ahoora.zhin.om.viewModels.MainViewModel
 import java.util.*
@@ -47,7 +40,6 @@ import java.util.*
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, DrawerLayout.DrawerListener, ViewTreeObserver.OnGlobalLayoutListener {
 
     var width = 0
-
 
 
     override fun onStart() {
@@ -242,19 +234,13 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
             R.id.nav_view_lang -> {
 
-                var lang = "en"
-                var country = "US"
 
-                if (SharedPrefs(this).getLocaleSelectedLanguage() == "en") {
-                    lang = "fa"
-                    country = "rIR"
-                }
-                SharedPrefs(this).setLocaleSelectedLanguage(lang)
+                 var lang = "en"
+                 if (SharedPrefs(this).getLocaleSelectedLanguage() == "en") {
+                     lang = "fa"
+                 }
 
-
-                val locale = Locale(lang, country)
-                LocaleChanger.setLocale(locale)
-                ActivityRecreationHelper.recreate(this, true)
+                updateLocale(Locale(lang))
             }
 
         }

@@ -2,30 +2,33 @@ package pro.ahoora.zhin.om.base
 
 import android.content.Context
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
-import android.widget.Toast
+import com.zeugmasolutions.localehelper.LocaleAwareCompatActivity
+import com.zeugmasolutions.localehelper.LocaleHelperActivityDelegateImpl
+import java.util.*
 
-import androidx.appcompat.app.AppCompatActivity
+abstract class BaseActivity : LocaleAwareCompatActivity(){
+    private val localeDelegate = LocaleHelperActivityDelegateImpl()
 
-import com.franmontiel.localechanger.LocaleChanger
-import com.franmontiel.localechanger.utils.ActivityRecreationHelper
-import pro.ahoora.zhin.om.util.SharedPrefs
-
-abstract class BaseActivity : AppCompatActivity() {
     override fun attachBaseContext(newBase: Context) {
-        val newBase2 = LocaleChanger.configureBaseContext(newBase)
-        super.attachBaseContext(newBase2)
+        super.attachBaseContext(localeDelegate.attachBaseContext(newBase))
     }
 
-    override fun onDestroy() {
-        ActivityRecreationHelper.onDestroy(this)
-        super.onDestroy()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        localeDelegate.onCreate(this)
     }
 
     override fun onResume() {
         super.onResume()
-        ActivityRecreationHelper.onResume(this)
+        localeDelegate.onResumed(this)
     }
 
+    override fun onPause() {
+        super.onPause()
+        localeDelegate.onPaused()
+    }
+
+    override fun updateLocale(locale: Locale) {
+        localeDelegate.setLocale(this, locale)
+    }
 }

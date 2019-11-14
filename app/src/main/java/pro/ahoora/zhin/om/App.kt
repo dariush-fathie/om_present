@@ -1,31 +1,20 @@
 package pro.ahoora.zhin.om
 
-import android.app.Application
 import android.content.Context
 import android.content.res.Configuration
-import pro.ahoora.zhin.om.util.LocaleHelper
-import com.franmontiel.localechanger.LocaleChanger
-import java.util.*
+import com.zeugmasolutions.localehelper.LocaleAwareApplication
+import com.zeugmasolutions.localehelper.LocaleHelperApplicationDelegate
 
 
-class App : Application() {
+class App : LocaleAwareApplication(){
+    private val localeAppDelegate = LocaleHelperApplicationDelegate()
 
-
-    private val supportedLocales = listOf(
-            Locale("fa", "rIR"),
-            Locale("en", "US")
-
-    )
-
-
-    override fun onCreate() {
-        super.onCreate()
-        LocaleChanger.initialize(baseContext,supportedLocales)
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(localeAppDelegate.attachBaseContext(base))
     }
-
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        LocaleChanger.onConfigurationChanged()
+        localeAppDelegate.onConfigurationChanged(this)
     }
 }

@@ -106,6 +106,6 @@
     <string name="color">color</string>
     <string name="insert">insert</string>
     <string name="change_language">Change Language</string>
-    <string name="no_support_NFC">sorry. this device does\'nt support NFC</string>
+    <string name="no_support_NFC" translatable="false">sorry. this device does\'nt support NFC</string>
 
 </resources>
